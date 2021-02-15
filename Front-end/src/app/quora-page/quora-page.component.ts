@@ -22,7 +22,10 @@ export class QuoraPageComponent implements OnInit {
   onSubmit(){
     console.log(this.quoraPostData.value);
     console.log("Hello");
-    //this.pageService.postData(this.data).subscribe();
+    console.log(JSON.stringify(this.quoraPostData.value));
+    this.pageService.postData(this.quoraPostData.value).subscribe((res)=>{
+      console.log(res);
+    });
   }
   private quoraPostForm(){
     this.quoraPostData = new FormGroup({

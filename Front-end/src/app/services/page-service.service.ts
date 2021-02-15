@@ -10,6 +10,6 @@ export class PageServiceService {
   constructor(private http : HttpClient) { }
 
   postData(data){
-    return this.http.post("http://localhost:3000", data);
+    return this.http.post("http://localhost:3000",data);
   }
 }
