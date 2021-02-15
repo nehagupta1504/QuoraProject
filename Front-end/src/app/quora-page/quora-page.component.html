@@ -1,0 +1,27 @@
+
+<form [formGroup]="quoraPostData" (ngSubmit)="onSubmit()">
+    <div class="form-group" >
+      <label for="postTitle">Title:</label>&nbsp;
+      <input 
+          class="form-control"
+          type="text" 
+          id="postTitle" 
+          formControlName="postTitle"
+          required>
+      <div 
+        *ngIf="f.postTitle.invalid && f.postTitle.touched " style="color: red;">Title is required!!</div>
+    </div><br>
+   
+    <div class="form-group">
+      <label style="float: left;" for="postDescription">Description:</label>&nbsp;<br>
+      <textarea 
+          class="form-control"    
+          rows="10" cols="100" 
+          id="postDescription" 
+          formControlName="postDescription"
+          required>
+      </textarea>
+      <div *ngIf="f.postDescription.invalid && f.postDescription.touched" style="color: red;"> Enter Some Description!!</div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="quoraPostData.invalid">Save</button>
+  </form>
