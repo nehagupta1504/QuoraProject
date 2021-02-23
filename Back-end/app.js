@@ -16,10 +16,18 @@ app.use(cors());
 app.post('/', bodyParser.json(), (req,res)=>{
   
     var data = JSON.stringify(req.body);
-    console.log(req.body);
-    //console.log(JSON.stringify(data));
-    res.json({"message":"Ok"});
-    writeStream.write("Interview Problem: "+ req.body.postTitle+"\n\n"+ "Description: "+req.body.postDescription);
+    console.log(data);
+    if(fs.existsSync(req.body.postTitle)){
+        console.log("File with same name already exists!!");
+        res.status(200).json('File with same name already exists!!');
+        
+    }else{
+        fs.writeFile(req.body.postTitle, "Interview Problem: "+ req.body.postTitle+"\n\n"+ "Description: "+req.body.postDescription+"\n\n" +  req.body.fixContent, function(err){
+            if(err) throw err;
+            console.log('File is created successfully!!');
+        })
+    }
+    
 });
 
 // app.get('/', function(req,res){
