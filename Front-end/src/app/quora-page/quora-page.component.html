@@ -23,8 +23,23 @@
       </textarea>
       <div *ngIf="f.postDescription.invalid && f.postDescription.touched" style="color: red;"> Enter Some Description!!</div>
     </div>
+     
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+   Add Test Case
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <label>Input Test Case 1:</label>
+    <textarea formControlName="testCasesInput"></textarea>
+    <label>Output Test Case 1:</label>
+    <textarea formControlName="testCasesOutput"></textarea>
+  </div>
+</div>
     <div class="form-group">
       <textarea class="form-control" rows="3" cols="15" formControlName="fixContent"></textarea>
     </div>
     <button type="submit" class="btn btn-success" [disabled]="quoraPostData.invalid">Save</button>
   </form>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

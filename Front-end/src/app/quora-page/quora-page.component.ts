@@ -33,6 +33,8 @@ export class QuoraPageComponent implements OnInit {
     this.quoraPostData = new FormGroup({
       'postTitle': new FormControl(null, Validators.required),
       'postDescription' : new FormControl(null, Validators.required),
+      'testCasesInput' : new FormControl(null),
+      'testCasesOutput' : new FormControl(null),
       'fixContent' : new FormControl("All the best and leave your solution in the comments! \n—————————————————————————— \nFollow AlgoMart for more such interesting problems.")
     });
   }
